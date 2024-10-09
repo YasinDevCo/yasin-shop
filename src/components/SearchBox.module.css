@@ -1,0 +1,24 @@
+.search{
+    margin: 0 10px 50px;
+}
+.search input{
+    border: 2px solid rgb(23, 104, 202);
+    padding: 10px;
+    width: 250px;
+    font-size: .9rem;
+    color: rgb(23, 104, 202);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.search input:focus{
+    outline: none;
+}
+.search button{
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgb(23, 104, 202);
+    color: #fff;
+   border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

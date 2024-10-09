@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import api from "./../services/config";
 const ProductContext = createContext();
 
@@ -13,6 +13,7 @@ function ProductProvider({ children }) {
         console.log(error.message);
       }
     };
+    fetchProducts();
   }, []);
 
   return (
@@ -21,5 +22,17 @@ function ProductProvider({ children }) {
     </ProductContext.Provider>
   );
 }
+const useProducts = () => {
+  const products = useContext(ProductContext);
+  return products;
+};
+
+const useProductsDetails = (id) => {
+  const products = useContext(ProductContext);
+  const result = products.find((product) => product.id == id);
+  return result;
+};
 
 export default ProductProvider;
+
+export { useProducts, useProductsDetails };
